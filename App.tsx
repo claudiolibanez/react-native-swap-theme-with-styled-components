@@ -1,14 +1,17 @@
 import React from 'react';
 
-import { ThemeProvider } from 'styled-components';
-
 import Home from './src/pages/Home';
+
+import { AppProvider } from './src/hooks';
+import { ToggleThemeProvider } from './src/hooks/useDarkMode';
 
 const App = () => {
   return (
-    <ThemeProvider>
-      <Home />
-    </ThemeProvider>
+    <ToggleThemeProvider>
+      <AppProvider>
+        <Home />
+      </AppProvider>
+    </ToggleThemeProvider>
   );
 };
 
